@@ -27,6 +27,12 @@ class OrderCatalog:
         self.name = name
         self.orders = []
 
+    def get_info(self):
+        text = f'{self.name}\n'
+        for o in self.orders:
+            text += f"{o.product.name} - {o.qty}\n"
+        return text
+
 
 product1 = Product('olma', 10000, 2000)
 product2 = Product('nok', 15000, 3000)
@@ -38,11 +44,15 @@ c1.products = [product1, product2, product3]
 # 1
 for i in c1.products:
     print(f'{i.name}-{i.price}-{i.qty}')
-print()
+
 # 2 productni rasmiylashtirish
 or1 = Order(product1, 20)
 or2 = Order(product2, 10)
 
+orcatlog = OrderCatalog("order catlog")
+orcatlog.orders = [or1, or2]
+
+print(orcatlog.get_info())
 # # 3
 # for i in Order.orders:
 #     print(f'{i.product.name}-{i.qty}')
