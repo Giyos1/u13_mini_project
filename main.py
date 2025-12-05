@@ -44,3 +44,5 @@ or2 = Order(product2, 10)
 # 3
 for i in Order.orders:
     print(f'{i.product.name}-{i.qty}')
+
+print('salom')
